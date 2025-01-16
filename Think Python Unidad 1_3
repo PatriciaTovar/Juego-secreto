@@ -1,0 +1,573 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyNuhPNlVcDYBmUKBOdp0Qle",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/PatriciaTovar/Juego-secreto/blob/main/Think%20Python%20Unidad%201_3\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "4.- Elabore los ejercicios siguientes y reporte sus respuestas en una notebook que incluya las preguntas y las instrucciones para su solución.\n",
+        "\n",
+        "Cap 1, página 13\n",
+        "\n",
+        "Cap 2, página 25\n",
+        "\n",
+        "Cap 3, página 37\n",
+        "\n",
+        "Cap 4, página 50, 51 y 52 resuelva tres ejercicios y pruebe el asistente virtual página 53\n",
+        "\n",
+        "\n",
+        "Ejercicios Capitulo 1\n",
+        "\n",
+        "Las siguientes preguntas le dan la oportunidad de practicar la escritura de expresiones aritméticas.\n",
+        "\n",
+        "1. ¿Cuántos segundos hay en 42 minutos y 42 segundos?"
+      ],
+      "metadata": {
+        "id": "P_bQ9kTRICZb"
+      }
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 28,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "v_O_rvdSH-Xx",
+        "outputId": "8f52160b-685d-457e-82d1-f6082499ff37"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Segundos = 2562\n"
+          ]
+        }
+      ],
+      "source": [
+        "#total_segundos = (minutos * 60) + segundos\n",
+        "minutos = 42\n",
+        "segundos = 42\n",
+        "total_segundos = (minutos * 60) + segundos\n",
+        "print(\"Segundos =\",total_segundos)\n"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "2. ¿Cuántas millas hay en 10 kilómetros? Pista: hay 1,61 kilómetros en una milla."
+      ],
+      "metadata": {
+        "id": "t7m-BFStH_d1"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 2. ¿Cuántas millas hay en 10 kilómetros?\n",
+        "# millas = kilometros / 1.61\n",
+        "kilometros = 10\n",
+        "millas = kilometros / 1.61\n",
+        "print(\"Millas en 10 kilómetros =\",millas)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "sN-ki4EJIAjO",
+        "outputId": "ec173d82-7847-48d4-f89e-7997d62c75df"
+      },
+      "execution_count": 27,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Millas en 10 kilómetros = 6.211180124223602\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "3. Si corres una carrera de 10 kilómetros en 42 minutos y 42 segundos, ¿cuál es tu ritmo promedio en segundos por milla?"
+      ],
+      "metadata": {
+        "id": "jyRvOW5gLyMS"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 3. Si corres una carrera de 10 kilómetros en 42 minutos y 42 segundos, ¿cuál es tu ritmo promedio en segundos por milla?\n",
+        "#ritmo_promedio = total_segundos / millas\n",
+        "ritmo_promedio = total_segundos / millas\n",
+        "print(\"Ritmo promedio en segundos por milla =\",ritmo_promedio)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "kO6prmQ4L0cr",
+        "outputId": "e4c1703b-a3cb-4001-bd59-d2af1cd5335c"
+      },
+      "execution_count": 26,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "412.482"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 26
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "4. ¿Cuál es tu ritmo promedio en minutos y segundos por milla?"
+      ],
+      "metadata": {
+        "id": "4N-KkJKfORuC"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 4. ¿Cuál es tu ritmo promedio en minutos y segundos por milla?\n",
+        "# minutos_por_milla = ritmo_promedio // 60\n",
+        "# segundos_restantes = ritmo_promedio % 60\n",
+        "minutos_por_milla = int(ritmo_promedio // 60)\n",
+        "segundos_restantes = int(ritmo_promedio % 60)\n",
+        "print(\"Ritmo promedio =\",minutos_por_milla \"minutos y\",segundos_restantes, \"segundos por milla\")\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "AbkdVe8EOTdB",
+        "outputId": "5b0f4b53-56b9-4bf5-a84e-cb3e1d947b11"
+      },
+      "execution_count": 22,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Ritmo promedio = 6 minutos y 52 segundos por milla\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "5. ¿Cuál es su velocidad promedio en millas por hora?"
+      ],
+      "metadata": {
+        "id": "PzHSFx0aQAIo"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 5. ¿Cuál es su velocidad promedio en millas por hora?\n",
+        "# tiempo_en_horas = tiempo_total_segundos / 3600\n",
+        "# velocidad_promedio = millas / tiempo_en_horas\n",
+        "tiempo_en_horas = total_segundos / 3600\n",
+        "velocidad_promedio = millas / tiempo_en_horas\n",
+        "print(\"Velocidad promedio=\",velocidad_promedio,\"millas por hora\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "sayWOoILQCth",
+        "outputId": "ff744769-f960-43dd-b7c3-fa19e937d748"
+      },
+      "execution_count": 23,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Velocidad promedio= 8.727653570337614 millas por hora\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Ejercicios Capitulo 2\n",
+        "\n",
+        "\n",
+        "Parte 1. El volumen de una esfera con radio r es (4/3) * pi * r^3 ¿Cuál es el volumen de una esfera con un radio de 5? Comience con una variable llamada radio y luego asigne el resultado a una variable llamada volumen. Muestre el resultado. Agregue comentarios para indicar que radio sestá en centímetros  yvolumen en centímetros cúbicos."
+      ],
+      "metadata": {
+        "id": "KlK2fN3VYbhd"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import math\n",
+        "radio = 5\n",
+        "volumen = (4 / 3) * math.pi * (radio ** 3)\n",
+        "print(\"El volumen de la esfera con radio =\",radio,\"cm es =\",volumen,\"cm\\u00b3\")\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "-_0kXoBLZSSd",
+        "outputId": "a3d92905-8e40-43af-8a9e-e6e8b8d0ab10"
+      },
+      "execution_count": 30,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "El volumen de la esfera con radio = 5 cm es = 523.5987755982989 cm³\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Parte 2. Una regla de trigonometría dice que para cualquier valor de x, (cos x)^2 + (sin x)^2 = 1. Veamos si es cierto para un valor específico de x como 42.\n",
+        "\n",
+        "Cree una variable x con este valor. Luego, utilice math.cos y math.sin para calcular el seno y el coseno de x , y la suma de sus cuadrados.\n",
+        "\n",
+        "El resultado debe ser cercano a 1. Puede que no sea exactamente 1 porque la aritmética de punto flotante no es exacta - solo es aproximadamente correcta."
+      ],
+      "metadata": {
+        "id": "9m7EulLYbAs8"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "x = 42\n",
+        "cos = math.cos(x)\n",
+        "sin = math.sin(x)\n",
+        "suma = cos**2 + sin**2\n",
+        "print(\"Para x =\",x_grados,\"grados, la suma de cos^2(x) y sin^2(x) es =\",suma)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "UjQE_dhzbqFF",
+        "outputId": "a0b36595-6a0b-4bdc-acb8-5925fbe15c20"
+      },
+      "execution_count": 35,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Para x = 42 grados, la suma de cos^2(x) y sin^2(x) es = 1.0\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Parte 3. Además de pi, la otra variable definida en el mathmódulo es e, que representa la base del logaritmo natural, escrito en notación matemática como e. Si no está familiarizado con este valor, pregúntele a un asistente virtual \"¿Qué es math.e?\" Ahora calculemos e^2 de tres maneras:\n",
+        "\n",
+        "1. Utilice math.e y el operador de exponenciación (**).\n",
+        "\n",
+        "2. Se utiliza math.pow para elevar math.e a la potencia 2.\n",
+        "\n",
+        "3. Utilice math.exp, que toma como argumento un valor, x, y calcula e^x.\n",
+        "\n",
+        "Es posible que notes que el último resultado es ligeramente diferente de los otros dos. Intenta averiguar cuál es el correcto."
+      ],
+      "metadata": {
+        "id": "Q-t_u-86dI8k"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "resultado_1 = math.e ** 2\n",
+        "\n",
+        "resultado_2 = math.pow(math.e, 2)\n",
+        "\n",
+        "resultado_3 = math.exp(2)\n",
+        "\n",
+        "print(\"Parte 3: Calculando e^2 de tres maneras:\")\n",
+        "print(\"1. Usando el operador ** =\",resultado_1)\n",
+        "print(\"2. Usando math.pow =\",resultado_2)\n",
+        "print(\"3. Usando math.exp =\",resultado_3)\n",
+        "\n",
+        "# Conclusión: Todos los resultados deben ser cercanos, aunque podría haber ligeras diferencias por la aritmética de punto flotante."
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "1lXNz_CsdyGc",
+        "outputId": "e66f7eae-df1d-4892-bed5-0ca433c5b5a8"
+      },
+      "execution_count": 37,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Parte 3: Calculando e^2 de tres maneras:\n",
+            "1. Usando el operador ** = 7.3890560989306495\n",
+            "2. Usando math.pow = 7.3890560989306495\n",
+            "3. Usando math.exp = 7.38905609893065\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Ejercicios Capitulo 3\n",
+        "\n",
+        "Ejercicio\n",
+        "\n",
+        "Escriba una función llamada triangle que tome una cadena y un entero y dibuje una pirámide con la altura dada, formada a partir de copias de la cadena. A continuación, se muestra un ejemplo de una pirámide con 5 niveles, utilizando la cadena 'L'.\n",
+        "\n",
+        "triangle('L', 5)\n",
+        "\n",
+        "L\n",
+        "\n",
+        "LL\n",
+        "\n",
+        "LLL\n",
+        "\n",
+        "LLLL\n",
+        "\n",
+        "LLLLL"
+      ],
+      "metadata": {
+        "id": "kjJpinBtf_IE"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def triangle(cadena, altura):\n",
+        "\n",
+        "    for i in range(1, altura + 1):\n",
+        "        print(cadena * i)\n",
+        "\n",
+        "triangle('L', 5)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "_b3h-88Zg3LT",
+        "outputId": "683a8527-ba03-4056-d24a-c96af1ffc49c"
+      },
+      "execution_count": 42,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "L\n",
+            "LL\n",
+            "LLL\n",
+            "LLLL\n",
+            "LLLLL\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Ejercicio\n",
+        "\n",
+        "Escriba una función llamada rectangle que tome una cadena y dos números enteros y dibuje un rectángulo con el ancho y la altura dados, formado a partir de copias de la cadena. A continuación, se muestra un ejemplo de un rectángulo con ancho 5 y altura 4, formado a partir de la cadena 'H'.\n",
+        "\n",
+        "rectangle('H', 5, 4)\n",
+        "\n",
+        "HHHHH\n",
+        "\n",
+        "HHHHH\n",
+        "\n",
+        "HHHHH\n",
+        "\n",
+        "HHHHH"
+      ],
+      "metadata": {
+        "id": "IUzmg5hBhvIM"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def rectangle(cadena, ancho, altura):\n",
+        "\n",
+        "    for i in range(altura):\n",
+        "        print(cadena * ancho)\n",
+        "\n",
+        "rectangle('H', 5, 4)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "u6oH70TkiLNP",
+        "outputId": "dedf0178-b301-4b83-ced2-129c256be0c2"
+      },
+      "execution_count": 44,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "HHHHH\n",
+            "HHHHH\n",
+            "HHHHH\n",
+            "HHHHH\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Ejercicio\n",
+        "\n",
+        "La canción \"99 Botellas de Cerveza\" comienza con este verso:\n",
+        "\n",
+        "  99 botellas de cerveza en la pared\n",
+        "\n",
+        "  99 botellas de cerveza\n",
+        "\n",
+        "  Toma una y pásala\n",
+        "\n",
+        "  98 botellas de cerveza en la pared\n",
+        "\n",
+        "Luego el segundo verso es el mismo, excepto que comienza con 98 botellas y termina con 97. La canción continúa, durante mucho tiempo, hasta que quedan 0 botellas de cerveza.\n",
+        "\n",
+        "Escriba una función llamada bottle_verseque tome un número como parámetro y muestre el verso que comienza con el número dado de botellas.\n",
+        "\n",
+        "Sugerencia: considere comenzar con una función que pueda imprimir la primera, segunda o última línea del verso y luego usarla para escribir bottle_verse.\n",
+        "\n",
+        "Utilice esta llamada de función para mostrar el primer verso.\n",
+        "\n",
+        "bottle_verse(99)\n",
+        "\n",
+        "99 botellas de cerveza en la pared\n",
+        "\n",
+        "99 botellas de cerveza\n",
+        "\n",
+        "Toma una y pásala\n",
+        "\n",
+        "98 botellas de cerveza en la pared\n"
+      ],
+      "metadata": {
+        "id": "c-jVn_75kfcy"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def bottle_verse(n):\n",
+        "    if n > 1:\n",
+        "        print(n, \"botellas de cerveza en la pared\")\n",
+        "        print(n, \"botellas de cerveza\")\n",
+        "        print(\"Toma una y pásala\")\n",
+        "        print(n-1, \"botellas de cerveza en la pared\")\n",
+        "    elif n == 1:\n",
+        "        print(\"1 botella de cerveza en la pared\")\n",
+        "        print(\"1 botella de cerveza\")\n",
+        "        print(\"Toma una y pásala\")\n",
+        "        print(\"No quedan botellas de cerveza en la pared\")\n",
+        "\n",
+        "bottle_verse(99)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "wMxWep6Rlunq",
+        "outputId": "780c7088-c96d-46b8-9a37-e7bca1370c05"
+      },
+      "execution_count": 47,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "99 botellas de cerveza en la pared\n",
+            "99 botellas de cerveza\n",
+            "Toma una y pásala\n",
+            "98 botellas de cerveza en la pared\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Si quieres imprimir la canción completa, puedes usar este forbucle, que cuenta hacia atrás desde 99hasta 1. No es necesario que comprendas completamente este ejemplo; aprenderemos más sobre forlos bucles y la rangefunción más adelante.\n",
+        "\n",
+        "for n in range(99, 0, -1):\n",
+        "\n",
+        "  bottle_verse(n)\n",
+        "\n",
+        "  print()"
+      ],
+      "metadata": {
+        "id": "3dqVaR8tmtHJ"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "for n in range(99, 0, -1):\n",
+        "    bottle_verse(n)\n",
+        "    print()"
+      ],
+      "metadata": {
+        "id": "brevuIWfmbXT"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
